@@ -402,6 +402,8 @@ namespace cost_management
             {
                 this.Cursor = NativeMethods.LoadCustomCursor(Application.StartupPath + "\\mb.ico");
                 DataView dv = new DataView(dtCompletedata);
+
+
                 StringBuilder sSQL = new StringBuilder();
                 if (btnname.Equals("btntruks"))
                 {
