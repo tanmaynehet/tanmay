@@ -592,11 +592,6 @@ namespace cost_management
             {
                 sbSQLOrderBy.Append(" sid desc,[Date ID], [Marketing Code],[Part No] desc");
             }
-            //DataTable dtdata = new DataTable();
-            //dtdata = clscon.dtGetData(sbSQL.ToString());
-            //DataView dv = dtCompletedata.DefaultView;
-            //dv.Sort = sbQrderBy.ToString().Replace("GRID.", "");
-            //DataTable sortedDT = dv.ToTable();
             dtdata = dtCompletedata.Select(sbSQL.ToString().Replace("WHERE", ""), sbSQLOrderBy.ToString().Replace("GRID.", "")).CopyToDataTable();
             DataTable dt = dtdata.Rows.Cast<System.Data.DataRow>().Skip((1 - 1) * 500).Take(500).CopyToDataTable();
             return dt;
