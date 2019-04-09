@@ -486,9 +486,9 @@ namespace cost_management
                     MessageBox.Show("No data found for Above search Criteria", "Cost Management ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     sSearchvalue = "";
                     return dt;
-                } 
+                }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { string sMsg = ex.ToString(); }
             return (dt);
         }
 
@@ -497,7 +497,7 @@ namespace cost_management
             StringBuilder sbSQL = new StringBuilder();
             StringBuilder sbSQLOrderBy = new StringBuilder();
             int iIndex = GlobalVariable.iTotalCOunt - iSIndex;
-            int iEnIndex = iIndex + 500; 
+            int iEnIndex = iIndex + 500;
             if (!sSearchvalue.Equals(""))
             {
                 sbSQL.Append(sSearchvalue.Equals("") ? "" : " WHERE " + sSearchvalue);
