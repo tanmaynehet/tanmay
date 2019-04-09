@@ -894,7 +894,7 @@ namespace cost_management
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { string s = ex.ToString(); }
         }
 
         //Sorting data while binding to Gridview
