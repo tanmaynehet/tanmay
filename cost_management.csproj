@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7464C148-2B1D-49B9-BD4C-494FADAB3A0A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cost_management</RootNamespace>
+    <AssemblyName>cost_management</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>cost_management.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Warranty_cockpit\proCockpit_GSP_WGE 1.3\Cockpit_GSP_WGE\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="rDotNet, Version=1.5.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\rDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="RDotNet.NativeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\RDotNet.NativeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.MSChartExtension, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Windows.Forms.DataVisualization.MSChartExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\..\Warranty_cockpit\proCockpit_GSP_WGE 1.3\Cockpit_GSP_WGE\bin\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cls\ClsCommonFunction.cs" />
+    <Compile Include="Cls\ClsForcasting.cs" />
+    <Compile Include="Cls\ClsGloble.cs" />
+    <Compile Include="Cls\Displaydata.cs" />
+    <Compile Include="Cls\MVSPMDBInfo.cs" />
+    <Compile Include="Cls\Resolution.cs" />
+    <Compile Include="frmcHangeLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcHangeLanguage.Designer.cs">
+      <DependentUpon>frmcHangeLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmdataForcasting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmdataForcasting.Designer.cs">
+      <DependentUpon>FrmdataForcasting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisplayReportsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplayReportsTest.Designer.cs">
+      <DependentUpon>frmDisplayReportsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisplayReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplayReports.Designer.cs">
+      <DependentUpon>frmDisplayReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplay.Designer.cs">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmloading.Designer.cs">
+      <DependentUpon>Frmloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmuploadExpo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmuploadExpo.Designer.cs">
+      <DependentUpon>frmuploadExpo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.cs">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="germem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>germem.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GetData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MidHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MidHome.Designer.cs">
+      <DependentUpon>MidHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmcHangeLanguage.resx">
+      <DependentUpon>frmcHangeLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmdataForcasting.de-DE.resx">
+      <DependentUpon>FrmdataForcasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmdataForcasting.resx">
+      <DependentUpon>FrmdataForcasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplayReportsTest.resx">
+      <DependentUpon>frmDisplayReportsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplayReports.resx">
+      <DependentUpon>frmDisplayReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplay.resx">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmloading.resx">
+      <DependentUpon>Frmloading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmuploadExpo.resx">
+      <DependentUpon>frmuploadExpo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="germem.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>germem.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidHome.de-DE.resx">
+      <DependentUpon>MidHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidHome.de.resx">
+      <DependentUpon>MidHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidHome.resx">
+      <DependentUpon>MidHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="bin\Debug\cost_management.exe.config" />
+    <None Include="bin\Debug\cost_management.vshost.exe.config" />
+    <None Include="bin\Debug\cost_management.vshost.exe.manifest" />
+    <None Include="bin\Debug\Cost_Managment.ini" />
+    <None Include="bin\Release\cost_management.exe.config" />
+    <None Include="GetData.xsc">
+      <DependentUpon>GetData.xsd</DependentUpon>
+    </None>
+    <None Include="GetData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GetData.xss">
+      <DependentUpon>GetData.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Displaydata.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdvancedDataGridView\AdvancedDataGridView.csproj">
+      <Project>{6eba0a55-b390-4479-a564-58d46094998d}</Project>
+      <Name>AdvancedDataGridView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormLanguageSwitch\FormLanguageSwitch.csproj">
+      <Project>{787b600c-9a56-41c7-a3c8-9553630fe3c1}</Project>
+      <Name>FormLanguageSwitch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\INIFile\INIFile.csproj">
+      <Project>{b1c612d6-12bc-49ca-8be5-52a008ceea3a}</Project>
+      <Name>INIFile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AdvancedDataGridView.dll" />
+    <Content Include="bin\Debug\AdvancedDataGridView.pdb" />
+    <Content Include="bin\Debug\cost_management.exe" />
+    <Content Include="bin\Debug\cost_management.pdb" />
+    <Content Include="bin\Debug\cost_management.vshost.exe" />
+    <Content Include="bin\Debug\DataGridViewAutoFilter.dll" />
+    <Content Include="bin\Debug\de-DE\cost_management.resources.dll" />
+    <Content Include="bin\Debug\de\cost_management.resources.dll" />
+    <Content Include="bin\Debug\FormLanguageSwitch.dll" />
+    <Content Include="bin\Debug\FormLanguageSwitch.pdb" />
+    <Content Include="bin\Debug\INIFile.dll" />
+    <Content Include="bin\Debug\INIFile.pdb" />
+    <Content Include="bin\Debug\INIFile.xml" />
+    <Content Include="bin\Debug\mb.ico" />
+    <Content Include="bin\Debug\SneakyImpishGaur-max-1mb.gif" />
+    <Content Include="bin\Debug\System.Windows.Forms.DataVisualization.MSChartExtension.dll" />
+    <Content Include="bin\Debug\ZedGraph.dll" />
+    <Content Include="bin\Release\AdvancedDataGridView.dll" />
+    <Content Include="bin\Release\AdvancedDataGridView.pdb" />
+    <Content Include="bin\Release\cost_management.exe" />
+    <Content Include="bin\Release\cost_management.pdb" />
+    <Content Include="bin\Release\de-DE\cost_management.resources.dll" />
+    <Content Include="bin\Release\de\cost_management.resources.dll" />
+    <Content Include="bin\Release\FormLanguageSwitch.dll" />
+    <Content Include="bin\Release\INIFile.dll" />
+    <Content Include="bin\Release\INIFile.pdb" />
+    <Content Include="bin\Release\INIFile.xml" />
+    <Content Include="bin\Release\System.Windows.Forms.DataVisualization.MSChartExtension.dll" />
+    <Content Include="bin\Release\ZedGraph.dll" />
+    <Content Include="DAG.cur" />
+    <Content Include="Images\DarkYello.png" />
+    <Content Include="Images\Green.png" />
+    <Content Include="Images\mb.ico" />
+    <Content Include="Images\mb.png" />
+    <Content Include="Images\red.png" />
+    <Content Include="Images\SneakyImpishGaur-max-1mb.gif" />
+    <Content Include="Images\yellow.png" />
+    <Content Include="mb.ico" />
+    <Content Include="Resources\Images\ColumnHeader_Filtered.png" />
+    <Content Include="Resources\Images\ColumnHeader_FilteredAndOrderedASC.png" />
+    <Content Include="Resources\Images\ColumnHeader_FilteredAndOrderedDESC.png" />
+    <Content Include="Resources\Images\ColumnHeader_OrderedASC.png" />
+    <Content Include="Resources\Images\ColumnHeader_OrderedDESC.png" />
+    <Content Include="Resources\Images\ColumnHeader_SavedFilters.png" />
+    <Content Include="Resources\Images\ColumnHeader_UnFiltered.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderASCbool.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderASCnum.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderASCtxt.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderDESCbool.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderDESCnum.png" />
+    <Content Include="Resources\Images\MenuStrip_OrderDESCtxt.png" />
+    <Content Include="Resources\Images\MenuStrip_ResizeGrip.png" />
+    <Content Include="Resources\Images\SearchToolBar_ButtonCaseSensitive.png" />
+    <Content Include="Resources\Images\SearchToolBar_ButtonClose.png" />
+    <Content Include="Resources\Images\SearchToolBar_ButtonFromBegin.png" />
+    <Content Include="Resources\Images\SearchToolBar_ButtonSearch.png" />
+    <Content Include="Resources\Images\SearchToolBar_ButtonWholeWord.png" />
+    <None Include="Resources\search_data-512.png" />
+    <None Include="Resources\SneakyImpishGaur-max-1mb.gif" />
+    <None Include="Resources\picExcelExport.png" />
+    <None Include="Resources\asdasd1.png" />
+    <None Include="Resources\asdasd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\en\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
