@@ -397,29 +397,23 @@ namespace cost_management
         private DataTable GetPagingData(int iSatringIdex, string btnname)
         {
             DataTable dt = new DataTable();
-
             StringBuilder sSQLOrderby = new StringBuilder();
             try
             {
                 this.Cursor = NativeMethods.LoadCustomCursor(Application.StartupPath + "\\mb.ico");
                 DataView dv = new DataView(dtCompletedata);
-
-
                 StringBuilder sSQL = new StringBuilder();
                 if (btnname.Equals("btntruks"))
                 {
                     sSQL.Append("[Marketing Code] like '2U%'  or  [Marketing Code] like '2L%'");
-                    //dv.RowFilter = sSQL.ToString();
                 }
                 else if (btnname.Equals("btnvans"))
                 {
                     sSQL.Append("[Marketing Code] like '2T%'");
-                    //dv.RowFilter = sSQL.ToString();
                 }
                 else if (btnname.Equals("btnpc"))
                 {
                     sSQL.Append("[Marketing Code] like '1%' or [Marketing Code] like 'SP%'");
-                    //dv.RowFilter = sSQL.ToString();
                 }
                 if (!sSearchvalue.Equals(""))
                 {
@@ -460,9 +454,7 @@ namespace cost_management
                         sSQLOrderby.Append(" sid desc, [Date ID],[Marketing Code],[Part No] desc");
                     }
                 }
-                //dv.Sort = sSQL.ToString();
                 dtdata = dtCompletedata.Select(sSQL.ToString(), sSQLOrderby.ToString()).CopyToDataTable();
-
                 if (dtdata.Rows.Count > 0)
                 {
                     try
@@ -484,18 +476,17 @@ namespace cost_management
                                 dt = dtdata.Rows.Cast<System.Data.DataRow>().Skip((iSatringIdex - 1) * 500).Take(500).CopyToDataTable();
                         }
                     }
-                    catch (Exception ex) { }
-
+                    catch (Exception ex)
+                    {
+                    }
                     PopulatePager(dtdata.Rows.Count, Convert.ToInt32(iSatringIdex));
-
                 }
                 else
                 {
                     MessageBox.Show("No data found for Above search Criteria", "Cost Management ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     sSearchvalue = "";
                     return dt;
-                }
-
+                } 
             }
             catch (Exception ex) { }
             return (dt);
@@ -506,8 +497,7 @@ namespace cost_management
             StringBuilder sbSQL = new StringBuilder();
             StringBuilder sbSQLOrderBy = new StringBuilder();
             int iIndex = GlobalVariable.iTotalCOunt - iSIndex;
-            int iEnIndex = iIndex + 500;
-            //sbSQL.Append("Select * from GRID ");
+            int iEnIndex = iIndex + 500; 
             if (!sSearchvalue.Equals(""))
             {
                 sbSQL.Append(sSearchvalue.Equals("") ? "" : " WHERE " + sSearchvalue);
