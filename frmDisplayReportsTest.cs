@@ -667,9 +667,9 @@ namespace cost_management
                 DataView view = new DataView(dt);
                 view.RowFilter = ADGDATA.FilterString;
                 dt = view.ToTable();
+
                 clscon.export(dt);
             }
-
             if (sBtnName.Equals("btntruks"))
             {
                 btntruks.BackColor = Color.FromArgb(27, 161, 226);
@@ -788,7 +788,7 @@ namespace cost_management
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { string s = ex.ToString(); }
             this.Cursor = Cursors.Default;
         }
 
